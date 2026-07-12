@@ -23,8 +23,7 @@ function StatCard({
 
       <div className="stat-card-content">
         <p className="stat-title">{title}</p>
-
-        <h2 className="stat-value">{value}</h2>
+        <p className="stat-value">{value}</p>
 
         {stat && (
           <p className={`stat-change stat-change-${statTone}`}>
