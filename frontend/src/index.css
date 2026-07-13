@@ -4,6 +4,8 @@
 
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
+/* Base */
+
 * {
   padding: 0;
   margin: 0;
@@ -13,8 +15,12 @@
 body {
   min-width: 320px;
   font-family: "Roboto", sans-serif;
-  background: #f8fafc;
+  background-color: #f3f3f3;
   color: #0f172a;
+}
+a {
+  text-decoration: none;
+
 }
 
 .visually-hidden {
@@ -29,10 +35,234 @@ body {
   border: 0;
 }
 
+/* App layout */
+
 .app {
   min-height: 100vh;
   display: flex;
 }
+
+
+.Homepage {
+  background-image: url(assets/ai.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+}
+
+.login__screen {
+  width: min(100%, 500px);
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.78) 0%,
+    rgba(30, 64, 175, 0.76) 42%,
+    rgba(15, 23, 42, 0.86) 100%
+  );
+  box-shadow:
+    0 28px 70px rgba(2, 6, 23, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.login__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+  color: white;
+}
+
+.login__title {
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+
+.login__subtitle {
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 1px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.form__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.input__box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: white;
+}
+
+.input__box label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input__control {
+  position: relative;
+  width: 100%;
+}
+
+.login__username,
+.login__password {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 44px 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  outline: none;
+  font: inherit;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.login__username:focus,
+.login__password:focus {
+  border-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.12);
+}
+
+.login__icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  color: rgba(255, 255, 255, 0.72);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.remember__forgot {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 13px;
+}
+
+.remember__forgot label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.remember__forgot a,
+.new__account a {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.login__btn,
+.google {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login__btn {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: #ffffff;
+  color: #1d4ed8;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.2);
+}
+
+.new__account {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14px;
+  text-align: center;
+}
+
+.login__divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+.login__divider::before,
+.login__divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.social__icons {
+  width: 100%;
+}
+
+.google {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.login__btn:hover,
+.google:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 540px) {
+  .Homepage {
+    padding: 20px 14px;
+  }
+
+  .login__screen {
+    min-height: auto;
+    padding: 30px 22px;
+  }
+
+  .remember__forgot {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+
+
+
+/* Sidebar */
 
 .sidebar {
   width: 260px;
@@ -45,36 +275,18 @@ body {
 }
 
 .logo {
-  margin: 0 0 34px;
-  padding: 0 14px;
-  font-size: 28px;
-  font-weight: 800;
-  color: #0a84ff;
+  margin: 8px 0 22px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  line-height: 0;
 }
 
-.logo-mark {
-  width: 32px;
-  height: 24px;
-  flex: 0 0 auto;
-}
-
-.logo-mark svg {
+.logo__image {
+  display: block;
   width: 100%;
-  height: 100%;
-  fill: none;
-  stroke: #0a84ff;
-  stroke-width: 2.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.logo-mark circle {
-  fill: #0a84ff;
-  stroke: none;
+  max-width: 220px;
+  height: 52px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .nav {
@@ -115,25 +327,137 @@ body {
   margin: 10px 0;
 }
 
+/* Main content */
+
 .main {
   flex: 1;
   min-width: 0;
   padding: 32px;
 }
 
+/* Dashboard header */
+
 .dashboard__header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  padding: 22px 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 18px rgba(15, 23, 42, 0.06);
+}
+
+.dashboard__titles {
+  display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
+  min-width: 260px;
 }
 
 .dashboard__title {
-  font-size: 32px;
-  font-weight: 600;
+  font-size: clamp(26px, 3vw, 32px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
+
 .dashboard__subtitle {
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 1.5;
   color: #64748b;
+}
+
+.right__nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex: 1;
+}
+
+.create__btn {
+  min-height: 42px;
+  padding: 0 18px;
+  background-color: #0a84ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.create__btn:hover {
+  background-color: #0073e6;
+  transform: translateY(-1px);
+}
+
+.search__bar {
+  width: min(240px, 100%);
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #0f172a;
+  font: inherit;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.search__bar::placeholder {
+  color: #94a3b8;
+}
+
+.search__bar:focus {
+  outline: none;
+  border-color: #0a84ff;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.12);
+}
+
+.fa-bell {
+  background-color: #eef6ff;
+  border-radius: 9999px;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0a84ff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.fa-user {
+  background-color: #0a84ff;
+  border-radius: 9999px;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+/* Dashboard grids */
+
+.dashboard__grid {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
 }
 .stats-grid {
   margin-top: 32px;
@@ -141,6 +465,8 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 32px;
 }
+
+/* Statistic cards */
 
 .stat-card {
   width: 100%;
@@ -234,7 +560,7 @@ body {
   font-weight: 800;
 }
 
-/* appointments */
+/* Appointments */
 
 .appointment__card {
   margin-top: 36px;
@@ -242,7 +568,10 @@ body {
   border-radius: 10px;
   background: #ffffff;
   width: calc(50% - 16px);
-  height: 400px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .appointment__header {
@@ -301,6 +630,174 @@ body {
   background-color: #ffedd5;
   color: #c2410c;
 }
+
+/* Tasks */
+
+.task__list {
+  flex: 1;
+}
+
+.task__row {
+  min-height: 68px;
+  padding: 16px;
+  border-bottom: 1px solid #e2f0e8;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.task__checkbox {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  accent-color: #0a84ff;
+  cursor: pointer;
+}
+
+.task__name {
+  min-width: 0;
+}
+
+.task__due {
+  margin-left: auto;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.task__due--today {
+  color: #f97316;
+}
+
+.card__footer {
+  margin-top: auto;
+  padding: 14px 16px;
+}
+
+.card__new-button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #0a84ff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card__new-button:hover {
+  text-decoration: underline;
+}
+
+/* Clients */
+
+.client__avatar {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 54px;
+  border-radius: 50%;
+  background-color: #eaf4ff;
+  color: #0a84ff;
+  display: grid;
+  place-items: center;
+}
+
+.client__avatar .fa-user {
+  width: auto;
+  height: auto;
+  background: transparent;
+  color: inherit;
+  font-size: 22px;
+  cursor: default;
+}
+
+.client__status {
+  margin-left: auto;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.client__status--active {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.client__status--lead {
+  background-color: #ffedd5;
+  color: #c2410c;
+}
+
+.client__status--inactive {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Invoices */
+
+.invoice__icon {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 54px;
+  border-radius: 8px;
+  background-color: #eaf4ff;
+  color: #0a84ff;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+}
+
+.invoice__summary {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.invoice__status {
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.invoice__status--paid {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.invoice__status--pending {
+  background-color: #ffedd5;
+  color: #c2410c;
+}
+
+.invoice__status--overdue {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .dashboard__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .right__nav__list {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .search__bar {
+    width: 100%;
+    flex: 1;
+  }
+}
+
 @media (max-width: 760px) {
   .app {
     flex-direction: column;
@@ -329,7 +826,29 @@ body {
     padding: 24px 20px;
   }
 
+  .dashboard__header {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .dashboard__titles {
+    min-width: 0;
+  }
+
+  .right__nav__list {
+    flex-wrap: wrap;
+  }
+
+  .search__bar {
+    order: -1;
+    flex-basis: 100%;
+  }
+
   .stats-grid {
     gap: 20px;
+  }
+
+  .appointment__card {
+    width: 100%;
   }
 }

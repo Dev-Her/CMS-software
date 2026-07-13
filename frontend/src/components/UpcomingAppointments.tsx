@@ -71,6 +71,12 @@ function UpcomingAppointments() {
           </p>
         </div>
       </div>
+
+      <div className="card__footer">
+        <button className="card__new-button" type="button">
+          + New Appointment
+        </button>
+      </div>
     </section>
   );
 }

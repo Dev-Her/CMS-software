@@ -1,7 +1,12 @@
 import Dashboard from "./pages/Dashboard";
-
+import Homepage from "./pages/Homepage";
 function App() {
-  return <Dashboard />;
+  return (
+    <>
+      <Homepage />
+      <Dashboard />
+    </>
+  );
 }
 
 export default App;

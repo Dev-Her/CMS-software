@@ -1,3 +1,5 @@
+import cmsLogo from "../assets/cmslogo.png";
+
 const mainLinks = [
   { title: "Home", href: "/", icon: "fa-solid fa-house" },
   { title: "Clients", href: "/clients", icon: "fa-solid fa-user-group" },
@@ -19,13 +21,7 @@ function Sidebar() {
   return (
     <aside className="sidebar">
       <h1 className="logo">
-        <span className="logo-mark" aria-hidden="true">
-          <svg viewBox="0 0 42 24" role="img">
-            <path d="M2 12h7l4-6 5 13 6-17 5 10h11" />
-            <circle cx="21" cy="12" r="2.5" />
-          </svg>
-        </span>
-        <span>Pulse</span>
+        <img className="logo__image" src={cmsLogo} alt="Pulse CMS" />
       </h1>
 
       <nav className="nav">
